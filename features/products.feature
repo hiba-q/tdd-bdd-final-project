@@ -128,7 +128,7 @@ Scenario: Search by Available
     And I should see "Sheets" in the results
     But I should not see "Shoes" in the results
 
-Scenario: Search by Available
+Scenario: Search by Name
     When I visit the "Home Page"
     And I press the "Clear" button
     And I set the "Name" to "Hat"
