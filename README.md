@@ -11,7 +11,6 @@ This includes:
 - API route testing and implementation
 - Behavior Driven Development with feature files and step definitions
 - Running coverage checks and behavior tests to ensure functionality
-```
 
 ## Development Tasks Completed
 
