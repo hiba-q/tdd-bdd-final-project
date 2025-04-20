@@ -1,48 +1,72 @@
-# TDD / BDD Final Project Template
+# TDD / BDD Final Project
 
-This repository contains the template to be used for the Final Project for the Coursera course **Introduction to TDD/BDD**.
+This project was developed as part of the Coursera course **"Introduction to Test Driven Development (TDD) / Behavior Driven Development (BDD)"** offered by IBM. The goal of the project is to apply TDD and BDD methodologies to implement and test an online product catalog microservice using Python, Flask, and Nose testing tools.
 
-## Usage
+## Project Overview
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
+The microservice is designed to manage a product catalog with full CRUD capabilities and additional search functionality. The project focuses heavily on writing automated tests first (TDD), defining behavior through scenarios (BDD), and then implementing the service logic.
 
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template. 
+This includes:
+- Model-level testing and development
+- API route testing and implementation
+- Behavior Driven Development with feature files and step definitions
+- Running coverage checks and behavior tests to ensure functionality
+```
 
-Name your repo: `tdd-bdd-final-project`.
+## Development Tasks Completed
 
-## Setup
+Throughout the project, I contributed to the following components:
 
-After entering the lab environment you will need to run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
+- ✅ Updated `tests/factories.py` to generate fake product data using FactoryBoy.
+- ✅ Implemented test cases in `tests/test_models.py` to cover:
+  - Create
+  - Read
+  - Update
+  - Delete
+  - List All
+  - Search by Name, Category, and Availability
+- ✅ Developed route test cases in `tests/test_routes.py` for all functionalities mentioned above.
+- ✅ Implemented API logic in `service/routes.py` to support full CRUD operations and search features.
+- ✅ Wrote BDD scenarios in `features/products.feature` for the user stories:
+  - Read
+  - Update
+  - Delete
+  - Search by Name
+  - Search by Category
+  - Search by Availability
+- ✅ Updated `features/steps/load_steps.py` to handle loading of test data.
+- ✅ Defined the Step Definitions in `features/steps/web_steps.py` to match BDD steps with application behavior.
+- ✅ Verified all tests passed using:
+  - `nosetests` with 95%+ code coverage
+  - `honcho start` to launch and test the app interface
+  - `behave` to confirm all 7 BDD scenarios passed
+
+## Setup Instructions
+
+To set up and run the project:
 
 ```bash
 bash bin/setup.sh
+exit  # then re-enter the shell
 ```
 
-Then you must exit the shell and start a new one for the Python virtual environment to be activated.
+To start the application:
 
 ```bash
-exit
+honcho start
 ```
 
-## Tasks
-
-In this project you will use good Test Driven Development (TDD) and Behavior Driven Development (BDD) techniques to write TDD test cases, BDD scenarios, and code, updating the following files:
+To run tests:
 
 ```bash
-tests/test_models.py
-tests/test_routes.py
-service/routes.py
-features/products.feature
-features/steps/load_steps.py
+nosetests --with-coverage
+behave
 ```
-
-You will be given partial implementations in each of these files to get you started. Use those implementations as examples of the code you should write.
-
 ## License
 
 Licensed under the Apache License. See [LICENSE](/LICENSE)
 
-## Author
+## Original Author of Template
 
 John Rofrano, Senior Technical Staff Member, DevOps Champion, @ IBM Research
 
